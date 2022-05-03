@@ -1,6 +1,7 @@
 from tkinter import *
 
 calculator = Tk()
+#calculator.iconbitmap('C:\\Users\\MY PC\\Downloads\\Microsoft_Office_Excel_36337.ico')
 
 windows = Entry(calculator, width=42, borderwidth=5, background='#b2beb5')
 windows.grid(row=0, column=0, columnspan=4)
@@ -131,5 +132,14 @@ button_equal.grid(row=4, column=3, rowspan=2)
 button_percent.grid(row=5, column=0)
 button_0.grid(row=5, column=1)
 button_point.grid(row=5, column=2)
+
+
+
+
+
+
+
+end_program = Button(calculator, text='END', command=windows.quit, width=20, bg='#b2beb5', fg='black', borderwidth=3)
+end_program.grid(row=6, column=0, columnspan=4)
 
 calculator.mainloop()
