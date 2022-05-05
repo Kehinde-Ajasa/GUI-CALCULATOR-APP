@@ -3,10 +3,13 @@ from tkinter import *
 calculator = Tk()
 #calculator.iconbitmap('C:\\Users\\MY PC\\Downloads\\Microsoft_Office_Excel_36337.ico')
 
-windows = Entry(calculator, width=42, borderwidth=5, background='#b2beb5')
-windows.grid(row=0, column=0, columnspan=4)
-calculator.title('CALCULATOR')
 
+calculator.title('CALCULATOR')
+windows_frame = LabelFrame(calculator, text='TECH_WITH_KEN',bg='pink', padx=50, pady=50)
+windows_frame.pack()
+
+windows = Entry(windows_frame, width=42, borderwidth=5, background='#b2beb5')
+windows.grid(row=0, column=0, columnspan=4)
 
 def addition(value):
 	recent = windows.get()
@@ -89,25 +92,25 @@ def equal():
 		windows.insert(0, float((percent)/100))
 
 
-button_1 = Button(calculator, text='1', padx=24, pady=10, command= lambda:addition(1), background='black', fg='white')
-button_2 = Button(calculator, text='2', padx=25, pady=10, command=lambda:addition(2), background='black', fg='white')
-button_3 = Button(calculator, text='3', padx=25, pady=10, command=lambda:addition(3), background='black', fg='white')
-button_4 = Button(calculator, text='4', padx=24, pady=10, command=lambda:addition(4), background='black', fg='white')
-button_5 = Button(calculator, text='5', padx=25, pady=10, command=lambda:addition(5), background='black', fg='white')
-button_6 = Button(calculator, text='6', padx=25, pady=10, command=lambda:addition(6), background='black', fg='white')
-button_7 = Button(calculator, text='7', padx=24, pady=10, command=lambda:addition(7), background='black', fg='white')
-button_8 = Button(calculator, text='8', padx=25, pady=10, command=lambda:addition(8), background='black', fg='white')
-button_9 = Button(calculator, text='9', padx=25, pady=10, command=lambda:addition(9), background='black', fg='white')
-button_0 = Button(calculator, text='0', padx=25, pady=10, command=lambda:addition(0), background='black', fg='white')
-button_C = Button(calculator, text='C', padx=23, pady=10, command=clear, background='black', fg='white')
-button_divide = Button(calculator, text='/', padx=25, pady=10, command=divide, background='black', fg='white')
-button_multiply = Button(calculator, text='x ', padx=24.4, pady=10, command=multiply, background='black', fg='white')
-button_add = Button(calculator, text='+', padx=25, pady=10, command=add, background='black', fg='white')
-button_subtract = Button(calculator, text='-', padx=26, pady=10, command=subtract, background='black', fg='white')
-button_cancel = Button(calculator, text='del', padx=20, pady=10, command=delete, background='black', fg='white')
-button_equal = Button(calculator, text='=', padx=25, pady=32, command=equal, background='black', fg='white')
-button_percent = Button(calculator, text='%', padx=22, pady=10, command=percent, background='black', fg='white')
-button_point = Button(calculator, text='. ', padx=25, pady=10, command=point, background='black', fg='white')
+button_1 = Button(windows_frame, text='1', padx=24, pady=10, command= lambda:addition(1), background='black', fg='white')
+button_2 = Button(windows_frame, text='2', padx=25, pady=10, command=lambda:addition(2), background='black', fg='white')
+button_3 = Button(windows_frame, text='3', padx=25, pady=10, command=lambda:addition(3), background='black', fg='white')
+button_4 = Button(windows_frame, text='4', padx=24, pady=10, command=lambda:addition(4), background='black', fg='white')
+button_5 = Button(windows_frame, text='5', padx=25, pady=10, command=lambda:addition(5), background='black', fg='white')
+button_6 = Button(windows_frame, text='6', padx=25, pady=10, command=lambda:addition(6), background='black', fg='white')
+button_7 = Button(windows_frame, text='7', padx=24, pady=10, command=lambda:addition(7), background='black', fg='white')
+button_8 = Button(windows_frame, text='8', padx=25, pady=10, command=lambda:addition(8), background='black', fg='white')
+button_9 = Button(windows_frame, text='9', padx=25, pady=10, command=lambda:addition(9), background='black', fg='white')
+button_0 = Button(windows_frame, text='0', padx=25, pady=10, command=lambda:addition(0), background='black', fg='white')
+button_C = Button(windows_frame, text='C', padx=23, pady=10, command=clear, background='black', fg='white')
+button_divide = Button(windows_frame, text='/', padx=25, pady=10, command=divide, background='black', fg='white')
+button_multiply = Button(windows_frame, text='x ', padx=24.4, pady=10, command=multiply, background='black', fg='white')
+button_add = Button(windows_frame, text='+', padx=25, pady=10, command=add, background='black', fg='white')
+button_subtract = Button(windows_frame, text='-', padx=26, pady=10, command=subtract, background='black', fg='white')
+button_cancel = Button(windows_frame, text='del', padx=20, pady=10, command=delete, background='black', fg='white')
+button_equal = Button(windows_frame, text='=', padx=25, pady=32, command=equal, background='black', fg='white')
+button_percent = Button(windows_frame, text='%', padx=22, pady=10, command=percent, background='black', fg='white')
+button_point = Button(windows_frame, text='. ', padx=25, pady=10, command=point, background='black', fg='white')
 
 button_C.grid(row=1, column=0)
 button_divide.grid(row=1, column=1)
@@ -139,7 +142,7 @@ button_point.grid(row=5, column=2)
 
 
 
-end_program = Button(calculator, text='END', command=windows.quit, width=20, bg='#b2beb5', fg='black', borderwidth=3)
+end_program = Button(windows_frame, text='END', command=windows.quit, width=20, bg='#b2beb5', fg='black', borderwidth=3)
 end_program.grid(row=6, column=0, columnspan=4)
 
 calculator.mainloop()
